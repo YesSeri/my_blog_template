@@ -1,6 +1,2 @@
 node_modules
 .env*
-testing
-db
-secrets
-*.sqlite3
