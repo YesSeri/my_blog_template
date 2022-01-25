@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>My Blog</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Blog template by Henrik Zenkert">
+
+	<link rel="stylesheet" href="quill.css">
 	<link rel="stylesheet" href="simple.css">
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -25,7 +27,6 @@
 	<script>
 		async function getPosts() {
 			const res = await fetch('/api/posts')
-			console.log(res)
 			const posts = await res.json();
 			const postContainer = document.getElementById('post-container');
 			posts.forEach(post => {

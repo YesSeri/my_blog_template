@@ -26,7 +26,7 @@ app.get('/api/posts', (req, res) => {
 	db.all("SELECT * FROM post ORDER BY created_at DESC", (error, result) => {
 		if (error) {
 			console.log(error)
-			return res.json(400, {
+			return res.status(400).json({
 				error: 1,
 				msg: "Error occured: " + error
 			});
@@ -50,11 +50,13 @@ app.post('/post', (req, res) => {
 		db.run('INSERT INTO post (title, content) VALUES ($1, $2);', title, content);
 		res.json({ "Posted": true });
 	} catch (error) {
-		if (error) return res.json(400, {
-			error: 1,
-			msg: "Error occured: " + error
-		});
-		console.log(error)
+		if (error) {
+			console.error(error)
+			return res.status(400).json({
+				error: 1,
+				msg: "Error occured: " + error
+			})
+		}
 	}
 });
 app.use(express.static(path.join(__dirname, 'static', 'protected')));
