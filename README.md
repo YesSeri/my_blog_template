@@ -2,8 +2,7 @@
 
 A blog template. I use it like a diary. Everything needed to have a text blog is here. 
 
-It is only for personal use. There is only an admin login. If you want to have users reading it, but not posting, further customizing is needed. 
-
+When you go to posts you will have to login with an admin account, to post. Set the username and password in your .env file. 
 
 ## Deployment
 ### Environment Variables
@@ -26,8 +25,9 @@ Open `localhost:3000` and login with the username and password you choose in you
 
 
 ## Production
-I use [pm2](https://pm2.keymetrics.io/) to run the server permanently. You can use a free Ec2 instance from AWS to host the blog online. Make sure you open port 3000 on the instance.
+I use [pm2](https://pm2.keymetrics.io/) to run the server permanently. You can use a free Ec2 instance from AWS to host the blog online. 
 
+I used this [guide](https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server) to learn how to deploy a nodejs project to EC2. 
 ## Tech Stack
 
 - **Client:** [Simple.CSS](https://simplecss.org/), [Quill](https://simplecss.org/), [Google Fonts](https://fonts.google.com/)

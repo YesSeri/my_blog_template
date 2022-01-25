@@ -18,7 +18,7 @@
 	<h1>My Blog</h1>
 	<nav>
 		<a href="/">Home</a>
-		<a href="/post">Post</a>
+		<a href="/post.html">Post</a>
 	</nav>
 
 	<div id="title">
@@ -38,7 +38,7 @@
 	</div>
 
 	<!-- Include the Quill library -->
-	<script src="./quill.js"></script>
+	<script src="quill.js"></script>
 
 	<!-- Initialize Quill editor -->
 	<script>
@@ -58,11 +58,13 @@
 			// Take all non empty dom elements in the editor and extract them 
 			const content = [...textarea.children].filter(child => child.innerText !== "\n").map(child => child.outerHTML).join("\n");
 
+			console.log(title)
 			fetch("/post", {
 				method: "POST",
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ title, content })
 			}).then(res => {
+				console.log(res)
 				const savedDiv = document.querySelector('#saved-icon');
 				savedDiv.style.display = "block";
 				setTimeout(() => {
