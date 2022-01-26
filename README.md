@@ -27,7 +27,7 @@ If you want an empty new database, just delete the old one, and a new one will b
 ## Production
 I use [pm2](https://pm2.keymetrics.io/) to run the server permanently. You can use a free Ec2 instance from AWS to host the blog online. I used this [guide](https://ourcodeworld.com/articles/read/977/how-to-deploy-a-node-js-application-on-aws-ec2-server) to learn how to deploy a nodejs project to EC2. 
 
-It is also very simple to publish it using [heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up).
+It is also very simple to publish it using [heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up). Only use this for testing. The DB will get deleted every now and then due to heroku clearing out all files every 24 hours or so. 
 ## Tech Stack
 
 - **Client:** [Simple.CSS](https://simplecss.org/), [Quill](https://simplecss.org/), [Google Fonts](https://fonts.google.com/)
